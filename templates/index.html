@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+  <div class="container text-center py-5">
+    <h1 class="display-4 fw-bold">Sahi Ride. Sahi Price. <span class="text-primary">Bas Glide.</span></h1>
+    <p class="lead text-muted">Compare Uber, Ola, Rapido & BluSmart in one tap.</p>
+
+    <form action="{{ url_for('dashboard') }}" method="get"
+          class="search-card mx-auto mt-4 p-4 shadow-lg rounded-4 bg-white">
+      <div class="mb-3 text-start">
+        <label class="form-label fw-semibold">Pickup</label>
+        <div class="input-group">
+          <input type="text" name="pickup" id="pickupInput"
+                 class="form-control" placeholder="Current location"
+                 required>
+          <button type="button" id="detectBtn" class="btn btn-outline-secondary">📍</button>
+        </div>
+      </div>
+      <div class="mb-3 text-start">
+        <label class="form-label fw-semibold">Destination</label>
+        <input type="text" name="destination" id="destinationInput"
+               class="form-control" placeholder="Where to?" required>
+      </div>
+      <button type="submit" class="btn btn-primary btn-lg w-100">Compare Rides</button>
+    </form>
+
+    <div class="row mt-5 g-4">
+      <div class="col-md-4"><div class="feature-card">⚡ <h5>Real-time fares</h5><p class="text-muted small">Smart pricing across all major providers.</p></div></div>
+      <div class="col-md-4"><div class="feature-card">💸 <h5>Cheapest highlighted</h5><p class="text-muted small">Best Price badge on every search.</p></div></div>
+      <div class="col-md-4"><div class="feature-card">🚀 <h5>Fastest highlighted</h5><p class="text-muted small">Catch the quickest pickup nearby.</p></div></div>
+    </div>
+  </div>
+</section>
+{% endblock %}

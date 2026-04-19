@@ -1,0 +1,98 @@
+/* ==========================================================
+   Glide — global styles
+   Clean white/gray theme with a small dark-mode override.
+   ========================================================== */
+
+:root {
+  --bg: #f7f8fa;
+  --surface: #ffffff;
+  --text: #111827;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --primary: #0d6efd;
+  --shadow: 0 8px 30px rgba(0,0,0,.06);
+}
+
+[data-theme="dark"] {
+  --bg: #0f1115;
+  --surface: #1a1d23;
+  --text: #f3f4f6;
+  --muted: #9ca3af;
+  --border: #2a2e36;
+  --shadow: 0 8px 30px rgba(0,0,0,.5);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+  transition: background .25s, color .25s;
+}
+
+.glide-nav {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.glide-logo {
+  display: inline-grid; place-items: center;
+  width: 32px; height: 32px;
+  background: var(--primary); color: white;
+  border-radius: 8px; font-weight: 700;
+  margin-right: 4px;
+}
+
+/* ----- Hero / search ----- */
+.hero { padding: 60px 0; }
+.search-card { max-width: 560px; background: var(--surface) !important; }
+
+.feature-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  height: 100%;
+  box-shadow: var(--shadow);
+}
+
+/* ----- Map ----- */
+#map {
+  height: 460px;
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+/* ----- Ride cards ----- */
+.ride-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 6px solid #000;
+  border-radius: 14px;
+  padding: 16px 18px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px;
+  box-shadow: var(--shadow);
+  transition: transform .15s ease;
+  text-decoration: none;
+  color: var(--text);
+}
+.ride-card:hover { transform: translateY(-2px); color: var(--text); }
+
+.ride-meta { display: flex; flex-direction: column; }
+.ride-provider { font-weight: 700; font-size: 1.1rem; }
+.ride-vehicle { color: var(--muted); font-size: .9rem; }
+
+.ride-price { font-size: 1.4rem; font-weight: 700; }
+.ride-eta   { color: var(--muted); font-size: .85rem; }
+
+.badge-best  { background: #16a34a; }
+.badge-fast  { background: #f59e0b; color: #111; }
+
+footer { color: var(--muted); }
+
+/* ----- Mobile tweaks ----- */
+@media (max-width: 576px) {
+  .hero { padding: 30px 0; }
+  #map { height: 300px; }
+}

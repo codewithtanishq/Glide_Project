@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container py-4">
+  <h3 class="mb-4">Your Search History</h3>
+  {% if history %}
+    <div class="table-responsive">
+      <table class="table table-hover align-middle">
+        <thead><tr>
+          <th>Pickup</th><th>Destination</th><th>Distance</th><th>When</th>
+        </tr></thead>
+        <tbody>
+        {% for h in history %}
+          <tr>
+            <td>{{ h.pickup }}</td>
+            <td>{{ h.destination }}</td>
+            <td>{{ "%.2f"|format(h.distance_km) }} km</td>
+            <td class="text-muted small">{{ h.created_at }}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  {% else %}
+    <p class="text-muted">No searches yet. Try comparing a ride!</p>
+  {% endif %}
+</div>
+{% endblock %}
