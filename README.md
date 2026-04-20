@@ -123,16 +123,6 @@ work for guests; only history requires sign-in.
 
 ---
 
-## 🖼️ Screenshots
-
-> Add your own screenshots here after running the app:
->
-> - `screenshots/home.png`
-> - `screenshots/dashboard.png`
-> - `screenshots/history.png`
-
----
-
 ## 🚧 Future Improvements
 
 - Real provider APIs (where partnerships allow) instead of smart mock pricing.
